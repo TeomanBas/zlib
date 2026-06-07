@@ -6,6 +6,11 @@ project(
     VERSION 1.3.2.1
     HOMEPAGE_URL "https://zlib.net/"
     DESCRIPTION "a general-purpose lossless data-compression library")
+	
+if(MSVC)
+	set(CMAKE_MSVC_RUNTIME_LIBRARY
+        "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+endif()
 
 # ============================================================================
 # CPack
